@@ -1,0 +1,729 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --body-color: #F6F5FF;
+    --text-color: #707070;
+    --bold-color: #2B2B2B;
+    --bar-skill: #1C6DD0;
+}
+body{
+    font-family: 'Poppins';
+    background: var(--body-color);
+}
+.main{
+    width: 80%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,max-content);
+    grid-template-areas: 
+    "header header header"
+    "skills aside aside"
+    "skills aside aside"
+    "hobbie aside aside"
+    "hobbie experiences experiences"
+    "hobbie experiences experiences"
+    "proyects proyects proyects"
+    "recipe homepage checkout"
+    ".   .    select"; 
+    gap: 15px;
+}
+header,
+section,
+aside{
+    border-radius: 10px;
+    background: #fff;
+    padding: 10px 20px;
+}
+/*---==== Hero: Start ====---*/
+.header{
+    grid-area: header;
+}
+.hero{
+    display: flex;
+}
+.profile_photo{
+    min-width: 235px; 
+}
+.profile_photo img{
+    width: 220px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.name{
+    font-size: 17px;
+    font-weight: 500;
+    display: block;
+    color: var(--bold-color);
+}
+.proffesion{
+    font-size: 13px;
+    color: var(--text-color);
+}
+.contact{
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 10px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--bold-color);
+}
+.profile_text{
+    display: grid;
+    row-gap: 8px;
+    font-size: 12px;
+    color: var(--text-color);
+}
+.p1{
+    width: 80%;
+}
+.p2{
+    width: 75%;
+}
+/*---==== Hero: End ====---*/
+
+/*---==== Skills: Start ====---*/
+.skills{
+    grid-area: skills;
+}
+.skills_conteiner,
+.skills_responsive{
+    display: grid;
+    row-gap: 10px;
+}
+.skills h3{
+    color: var(--bold-color);
+    margin-bottom: 10px;
+}
+.skill{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.skill span{
+    background: #bbb;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    position: relative;
+}
+.skill span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--bar-skill);
+    border-radius: 5px;
+}
+.react::before{
+    --animation: 65%;
+    animation: width 2s ease 1 forwards;
+}
+.js::before{
+    --animation: 75%;
+    animation: width 2s ease 1 forwards;
+}
+.css::before{
+    --animation: 85%;
+    animation: width 2s ease 1 forwards;
+}
+.vue::before{
+    --animation: 60%;
+    animation: width 2s ease 1 forwards;
+}
+.redux::before{
+    --animation: 77%;
+    animation: width 2s ease 1 forwards;
+}
+.react_native::before{
+    --animation: 85%;
+    animation: width 2s ease 1 forwards;
+}
+.skill p{
+    min-width: 50%;
+    color: var(--text-color);
+}
+@keyframes width{
+    from{
+        width: 0;
+    }
+    to{
+        width: var(--animation);
+    }
+}
+/*---==== Skills: End ====---*/
+
+/*---==== Hobbies: Start ====---*/
+.hobbies{
+    grid-area: hobbie;
+}
+.hobbies_conteiner{
+    display: grid;
+    row-gap: 15px;
+}
+.hobbies_conteiner span{
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--text-color);
+}
+.hobbie h3{
+    font-size: 14px;
+    color: var(--bold-color);
+}
+.hobbie p{
+    font-size: 11px;
+    color: var(--text-color);
+}
+.hobbie img{
+    width: 100%;
+    height: 100px;
+    border-radius: 15px;
+}
+/*---==== Hobbies: End ====---*/
+
+/*---==== Aside: Start ====---*/
+.aside{
+    grid-area: aside;
+    overflow-x: hidden;
+}
+.blog_top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.blog_top span{
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--bold-color);
+}
+.blog_img{
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    object-fit: cover;
+    position: relative;
+    right: -30px;
+}
+.blog_bottom{
+    display: grid;
+    row-gap: 15px;
+}
+.blog_bottom p{
+    width: 88%;
+    font-size: 12px;
+    color: var(--text-color);
+}
+.blog_bottom button{
+    width: max-content;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--bar-skill);
+    cursor: pointer;
+}
+/*---==== Aside: End ====---*/
+
+/*---==== Experiences: Start ====---*/
+.experiences{
+    grid-area: experiences;
+}
+.experiences .exp_title{
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--text-color);
+}
+.logo{
+    width: 80px;
+    height: auto;
+}
+.exp_top,
+.exp_bottom{
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 10px;
+    margin-top: 15px;
+    padding: 15px 0;
+}
+.job{
+    display: grid;
+    align-items: start;
+}
+.job span{
+    font-size: 12px;
+    color: var(--text-color);
+}
+.job h4{
+    font-size: 13px;
+    color: var(--bold-color);
+    margin-top: 5px;
+}
+.exp_top p,
+.exp_bottom p{
+    margin-top: 10px;
+    color: var(--text-color);
+    font-size: 12px;
+}
+/*---==== Experiences: Start ====---*/
+
+/*---==== Proyects: Start ====---*/
+.proyects{
+    grid-area: proyects;
+}
+.proyects span{
+    font-size: 15px;
+    color: var(--bold-color);
+    font-weight: 500;
+}
+.proyect{
+    display: flex;
+    margin-top: 10px;
+}
+.proyect p{
+    margin-right: 8px;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 10px;
+}
+.proyects .proyect p:not(:last-child){
+    border: 1px solid var(--text-color);
+}
+.p_mod{
+    background: var(--bar-skill);
+    color: #fff;
+}
+/*---==== Proyects: End ====---*/
+
+/*---==== Proyect: Start ====---*/
+.recipe_responsive,
+.homepage_responsive,
+.checkout_responsive{
+    display: grid;
+    row-gap: 10px;
+}
+.recipe{
+    grid-area: recipe;
+}
+.homepage{
+    grid-area: homepage;
+}
+.checkout{
+    grid-area: checkout;
+}
+.recipe img,
+.homepage img,
+.checkout img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.recipe span,
+.homepage span,
+.checkout span{
+    font-size: 13px;
+    color: var(--bold-color);
+}
+.recipe .span_mod,
+.homepage .span_mod,
+.checkout .span_mod{
+    font-weight: 500;
+    font-size: 17px;
+}
+.recipe p,
+.homepage p,
+.checkout p{
+    padding: 0;
+    color: var(--text-color);
+    font-size: 12px;
+}
+.proyect_links{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+.proyect_links a{
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid #3DB2FF;
+    color: #3DB2FF;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.proyect_links .demo{
+    background: #3DB2FF;
+    color: #fff;
+}
+/*---==== Proyect: End ====---*/
+
+/*---==== Select: Start ====---*/
+.select{
+    grid-area: select;
+}
+.select_box{
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.select_box span,
+.select_box i{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    color: var(--bold-color);
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background .1s ease;
+}
+.select_box i{
+    font-size: 15px;
+}
+.select_box .span_points{
+    align-items: end;
+    font-size: 23px;
+    border: none;
+    cursor: unset;
+}
+.select_box span:not(.span_points):hover,
+.select_box i:hover,
+.select_box .span_active{
+    background: var(--bar-skill);
+    color: #fff;
+    border: none;
+}
+/*---==== Select: End ====---*/
+
+/*---==== Footer: Start ====---*/
+.footer{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.footer p b{
+    text-decoration: underline;
+    color: #2B2B2B;
+}
+/*---==== Footer: End ====----*/
+
+/*---==== Lightbox: Start ====---*/
+.light_box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, .5);
+    transform: translateX(-100%);
+    transition: transform .5s ease;
+}
+.profile_photo-light{
+    transform: scale(0);
+    border-radius: 10px;
+    transition: transform .3s .4s;
+    width: 50%;
+    height: auto;
+}
+.light_box .text_light{
+    color: #fff;
+}
+.light_box .close_light{
+    color: #eee;
+    font-size: 30px;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+}
+/*---==== Lightbox: End ====---*/
+
+/*---==== Responsive desing ====---*/
+@media screen and (max-width: 800px){
+    .main{
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /*---==== Skills: Start ====---*/
+    .skills{
+        width: 100%;
+    }
+    .skills h3{
+        font-size: 17px;
+    }
+    .skills p{
+        font-size: 14px;
+    }
+    /*---==== Skills: End ====---*/
+
+    /*---==== Hobbies: Start ====---*/
+    .hobbies{
+        width: 100%;
+    }
+    .hobbie img{
+        height: 250px;
+    }
+    .hobbie h3{
+        font-size: 17px;
+    }
+    .hobbie p{
+        font-size: 13px;
+    }
+    /*---==== Hobbies: End ====---*/
+
+    /*---==== Aside: Start ====---*/
+    .aside{
+        width: 100%;
+    }
+    .blog_top .blog_img{
+        width: 400px;
+        height: auto;
+    }
+    .blog_top span{
+        font-size: 19px;
+    }
+    .blog_bottom p,
+    .blog_bottom button{
+        font-size: 13px;
+    }
+    /*---==== Aside: End ====---*/
+
+    /*---==== Experiences: Start ====---*/
+    .experiences{
+        width: 100%;
+    }
+    /*---==== Experiences: End ====---*/
+
+    /*---==== Proyects: Start ====---*/
+    .proyects{
+        width: 100%;
+    }
+    /*---==== Proyects: End ====---*/
+
+        /*---==== Proyect: Start ====---*/
+        .recipe,
+        .homepage,
+        .checkout{
+            width: 95%;
+            margin: 0 auto;
+            grid-auto-flow: column;
+            column-gap: 10px;
+            text-align: center;
+        }
+        .recipe img,
+        .homepage img,
+        .checkout img{
+            width: 300px;
+            height: auto;
+            border: 1px solid var(--text-color);
+            border-radius: 6px;
+        }
+        .recipe span,
+        .homepage span,
+        .checkout span{
+            font-size: 14px;
+        }
+        .recipe .span_mod,
+        .homepage .span_mod,
+        .checkout .span_mod{
+            font-size: 17px;
+        }
+        .recipe p,
+        .homepage p,
+        .checkout p{
+            font-size: 13px;      
+        }
+        .proyect_links{
+            justify-content: center;
+        }
+        .proyect_links a{
+            font-size: 15px;
+        }
+        /*---==== Proyect: End ====---*/
+
+        /*---==== Lightbox: Start ====---*/
+        .profile_photo-light{
+            width: 85%;
+        }
+        /*---==== Lightbox: End ====---*/
+}
+
+@media screen and (max-width: 600px){
+    header,
+    section,
+    aside{
+        padding: 10px;
+    }
+    .main{
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /*---==== Header: Start ====---*/
+    .hero{
+        display: flex;
+        flex-direction: column;
+    }
+    .info{
+        flex-direction: column;
+        justify-content: unset;
+    }
+    .contact{
+        display: flex;
+    }
+    .profile_photo img{
+        width: 100%;
+    }
+    .name{
+        font-size: 15px;
+    }
+    .proffesion{
+        font-size: 13px;
+    }
+    .contact_conteiner{
+        margin-top: 8px;
+    }
+    .contact{
+        margin-top: 5px;
+    }
+    .p1{
+        width: 100%;
+        text-align: center;
+    }
+    .p2{
+        display: none;
+    }
+    /*---==== Header: End ====---*/
+
+    /*---==== Skills: Start ====---*/
+    .skills_conteiner{
+        grid-auto-flow: column;
+        column-gap: 15px;
+    }
+    .skills h3{
+        font-size: 16px;
+    }
+    .skills p{
+        font-size: 13px;
+    }
+    /*---==== Skills: End ====---*/
+
+    /*---==== Hobbies: Start ====---*/
+    .hobbie img{
+        height: 150px;
+    }
+    /*---==== Hobbies: End ====---*/
+
+    /*---==== Aside: Start ====---*/
+    .blog_top .blog_img{
+        width: 230px;
+        height: auto;
+    }
+    .blog_top span{
+        font-size: 16px;
+    }
+    /*---==== Aside: End ====---*/
+    
+    /*---==== Proyects: Start ====---*/
+    .proyects span{
+        font-size: 14px;
+    }
+    .proyect p{
+        font-size: 11px;
+    }
+    /*---==== Proyects: End ====---*/
+
+    /*---==== Proyect: Start ====---*/
+    .recipe,
+    .homepage,
+    .checkout{
+        width: 95%;
+        margin: 0 auto;
+        grid-auto-flow: column;
+        column-gap: 10px;
+        text-align: center;
+    }
+    .recipe img,
+    .homepage img,
+    .checkout img{
+        width: auto;
+        height: 300px;
+        border: 1px solid var(--text-color);
+        border-radius: 6px;
+    }
+    .recipe span,
+    .homepage span,
+    .checkout span{
+        font-size: 12px;
+    }
+    .recipe .span_mod,
+    .homepage .span_mod,
+    .checkout .span_mod{
+        font-size: 15px;
+    }
+    .recipe p,
+    .homepage p,
+    .checkout p{
+        font-size: 11px;      
+    }
+    .proyect_links a{
+        font-size: 13px;
+    }
+    /*---==== Proyect: End ====---*/
+
+    /*---==== Footer: Start ====---*/
+    .footer p{
+        font-size: 13px;
+    }
+    /*---==== Footer: Start ====---*/
+}
+/*---==== Proyect: End ====---*/
+
+@media screen and (max-width: 380px){
+    /*---==== Skills: Start ====---*/
+    .skills_conteiner{
+        column-gap: 8px;
+    }
+    .skills h3{
+        font-size: 16px;
+    }
+    .skills p{
+        font-size: 11px;
+    }
+    /*---==== Skills: End ====---*/
+
+    /*---==== Aside: Start ====---*/
+    .blog_top .blog_img{
+        width: 180px;
+    }
+    .blog_top span{
+        font-size: 14px;
+    }
+    .blog_bottom p,
+    .blog_bottom button{
+        font-size: 11px;
+    }
+    /*---==== Aside: End ====---*/
+}
